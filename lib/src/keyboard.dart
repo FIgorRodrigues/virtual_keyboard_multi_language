@@ -223,7 +223,7 @@ class _VirtualKeyboardState extends State<VirtualKeyboard> {
               break;
             case VirtualKeyboardKeyType.Action:
               // Draw action key.
-              keyWidget = _keyboardDefaultActionKey(virtualKeyboardKey);
+              keyWidget = keyboardDefaultActionKey(virtualKeyboardKey);
               break;
           }
         } else {
@@ -277,7 +277,7 @@ class _VirtualKeyboardState extends State<VirtualKeyboard> {
   }
 
   /// Creates default UI element for keyboard Action Key.
-  Widget _keyboardDefaultActionKey(VirtualKeyboardKey key) {
+  Widget keyboardDefaultActionKey(VirtualKeyboardKey key) {
     // Holds the action key widget.
     Widget? actionKey;
 
@@ -316,12 +316,15 @@ class _VirtualKeyboardState extends State<VirtualKeyboard> {
         actionKey = Icon(Icons.arrow_upward, color: textColor);
         break;
       case VirtualKeyboardKeyAction.Space:
-        actionKey = actionKey = Icon(Icons.space_bar, color: textColor);
+        actionKey = Text(
+          "Espace",
+          style: textStyle,
+        );
         break;
       case VirtualKeyboardKeyAction.Return:
-        actionKey = Icon(
-          Icons.keyboard_return,
-          color: textColor,
+        actionKey = Text(
+          "Enter",
+          style: textStyle,
         );
         break;
       case VirtualKeyboardKeyAction.SwithLanguage:
